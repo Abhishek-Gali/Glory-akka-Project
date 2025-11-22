@@ -2,8 +2,12 @@ services:
   - type: web
     name: osint-email-scraper
     env: node
-    buildCommand: npm install && npx puppeteer browsers install chrome && npm run build
+    buildCommand: |
+      export PUPPETEER_CACHE_DIR=$PWD/.cache/puppeteer
+      npm install
+      npx puppeteer browsers install chrome
+      npm run build
     startCommand: npm start
     envVars:
       - key: PUPPETEER_CACHE_DIR
-        value: /opt/render/.cache/puppeteer
+        value: .cache/puppeteer
