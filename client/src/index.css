@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #171717;
+  --color-dark-700: #262626;
+
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+
+  --font-sans: Inter, sans-serif;
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  --animate-gradient: gradient 6s ease infinite;
+}
+
+body {
+  @apply bg-dark-900 text-white font-sans;
+}
